@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: keycloak-project
+  datasource:
+    url: jdbc:postgresql://localhost:5432/keycloak-test_db
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/Seyha
+keycloak:
+  auth-server-url: http://localhost:8080
+  realm: Seyha
+  clientId: seyha-rest-api
+  clientSecret: Q5dXPcvM4wfVpFzRpO5LUJ1keBZtgUm6
+
+server:
+  port: 8081
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: seyha-rest-api
+      client-secret: Q5dXPcvM4wfVpFzRpO5LUJ1keBZtgUm6
